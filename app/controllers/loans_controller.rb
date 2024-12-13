@@ -23,6 +23,9 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new(loan_params)
 
+    @analysis = RetrieveSoilAnalysisService.call(data: loan_params)
+    Rails.logger.info(@analysis.inspect)
+
     respond_to do |format|
       if @loan.save
         format.html { redirect_to @loan, notice: "Loan was successfully created." }
