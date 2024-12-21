@@ -9,7 +9,11 @@ module RetrieveSoilAnalysisService
         conn.request :url_encoded
         conn.response :json
         conn.adapter Faraday.default_adapter
-      end.post('/fertilization_recommendation', request_body(data))
+      end.post('/fertilization_recommendations') do |req|
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['Accept'] = 'application/json'
+        req.body = request_body(data).to_json
+      end
 
       handle_response(response)
     rescue Faraday::Error => e
@@ -27,7 +31,7 @@ module RetrieveSoilAnalysisService
           ve: 75.0,
           prnt: 99.0,
           plantio_direto: params[:no_till] == '1' ? "sim" : "não",
-          produtividade_desejada: params[:expected_productivity],
+          produtividade_desejada: params[:expected_productivity].to_f,
           fonte_nutrientes_npk: params[:npk_sources]
         }
       }

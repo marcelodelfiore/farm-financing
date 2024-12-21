@@ -24,7 +24,8 @@ class LoansController < ApplicationController
     @loan = Loan.new(loan_params)
 
     @analysis = RetrieveSoilAnalysisService.call(data: loan_params)
-    Rails.logger.info(@analysis.inspect)
+    flash[:analysis] = @analysis
+
 
     respond_to do |format|
       if @loan.save
