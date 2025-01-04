@@ -1,11 +1,11 @@
 <div id="<%= dom_id loan %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Client:</strong>
+    <strong class="block font-medium mb-1">Cliente:</strong>
     <%= loan.client_id %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Analysis:</strong>
+    <strong class="block font-medium mb-1">Análise:</strong>
     <%= loan.analysis_id %>
   </p>
 
@@ -15,27 +15,32 @@
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Culture:</strong>
+    <strong class="block font-medium mb-1">Cultura:</strong>
     <%= loan.culture %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">No till:</strong>
-    <%= loan.no_till %>
+    <strong class="block font-medium mb-1">Área:</strong>
+    <%= loan.area %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Expected productivity:</strong>
+    <strong class="block font-medium mb-1">Plantio Direto?:</strong>
+    <%= loan.no_till ? 'Sim' : 'Não' %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Produtividade Esperada (t/ha):</strong>
     <%= loan.expected_productivity %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Npk sources:</strong>
+    <strong class="block font-medium mb-1">Fertilizantes Escolhidos:</strong>
     <%= loan.npk_sources %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Recommended Fertilization:</strong>
+    <strong class="block font-medium mb-1">Fertilização Recomendada:</strong>
     <%= flash[:analysis] %>
   </p>
 </div>

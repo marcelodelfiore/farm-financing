@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_11_181241) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_04_165917) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -31,6 +31,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_11_181241) do
     t.string "npk_sources"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "area", default: 0.0, null: false
     t.index ["client_id"], name: "index_loans_on_client_id"
   end
 

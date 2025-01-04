@@ -69,6 +69,6 @@ class LoansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def loan_params
-      params.expect(loan: [ :client_id, :analysis_id, :status, :culture, :no_till, :expected_productivity, :npk_sources ])
+      params.expect(loan: [ :client_id, :analysis_id, :status, :culture, :no_till, :expected_productivity, :npk_sources, :area ])
     end
 end
