@@ -30,9 +30,9 @@ module RetrieveSoilAnalysisService
           culture: params[:culture],
           ve: 75.0,
           prnt: 99.0,
-          plantio_direto: params[:no_till] == '1' ? "sim" : "não",
-          produtividade_desejada: params[:expected_productivity].to_f,
-          fonte_nutrientes_npk: params[:npk_sources]
+          no_till: params[:no_till] == '1' ? "sim" : "não",
+          desired_productivity: params[:expected_productivity].to_f,
+          npk_sources: params[:npk_sources]
         }
       }
     end
